@@ -13,8 +13,10 @@ for (var i = 0; i < sections.length; i++) {
     //sections[1].style.transform = "translateX(" + decalage + "px)";
   });
   container.addEventListener("touchend", function(){
+    console.log(posX, screenWidth/2)
     if (posX < screenWidth/2) {
-      sections[1].style.transform = "translateX(0)";
+      sections[0].style.transform = "translateX(0)";
+      sections[1].style.transform = "translateX(-100vw)";
     }
   })
 }
