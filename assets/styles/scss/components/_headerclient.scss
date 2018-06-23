@@ -1,0 +1,62 @@
+.header{
+  background: $admin-header;
+  width: 100vw;
+  font-size: 12px;
+  font-family: 'Nunito', sans-serif;
+  color: #FFF;
+  &__inner{
+    width: 90%;
+    margin: auto;
+    padding: 20px 0;
+  }
+  &__menu{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo-imgContainer{
+    width: 60px;
+    margin: auto;
+    transform: translateY(-50%);
+  }
+  &__companyName-imgContainer{
+    width: 82px;
+    margin: auto;
+    transform: translateY(-200%);
+  }
+  &__img{
+    width: 100%;
+  }
+  &__line{
+    width: 100%;
+    height: 2px;
+    background: rgba(73,182,206,.35);
+    display: block;
+    position: relative;
+  }
+  &__line-inner{
+    width: 33%;
+    height: 2px;
+    background: $light-blue;
+    display: block;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+  }
+  &__tabs{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    &-item{
+      width: 33%;
+      text-align: center;
+    }
+  }
+}
+.contentClient{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: -webkit-linear-gradient(bottom left, #354158 0%, #3d5b89 100%);
+  background: -o-linear-gradient(bottom left, #354158 0%, #3d5b89 100%);
+  background: linear-gradient(to top right, #354158 0%, #3d5b89 100%);
+}

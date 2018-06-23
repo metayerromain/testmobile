@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../assets/styles/css/styles.css">
+  <link rel="stylesheet" href="../assets/styles/css/reset.css">
+  <title>ESPACE CLIENT</title>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__menu">
+        <div class="header__username">Username</div>
+        <div class="header__logout">Log out</div>
+      </div>
+      <div class="header__logo-imgContainer">
+        <h1><img class="header__img" src="../assets/img/Illustration-Logo.png" alt="logo" title="Space Dust"></h1>
+      </div>
+      <div class="header__companyName-imgContainer">
+        <img class="header__img" src="../assets/img/SPACE-DUST-W.png" alt="logo" title="Space Dust">
+      </div>
+      <div class="header__nav">
+        <div class="header__line">
+          <div class="header__line-inner"></div>
+        </div>
+        <div class="header__tabs">
+          <div class="header__tabs-item">Suivi</div>
+          <div class="header__tabs-item">Devis</div>
+          <div class="header__tabs-item">Profil</div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="contentClient">
+    <section id="client1" ontouchstart="p1start(event)" ontouchmove="p1move(event)" ontouchend="p1end(event)" class="suivi"></section>
+    <section id="client2" ontouchstart="p2start(event)" ontouchmove="p2move(event)" ontouchend="p2end(event)" class="devis"></section>
+    <section id="client3" ontouchstart="p3start(event)" ontouchmove="p3move(event)" ontouchend="p3end(event)" class="profil"></section>
+  </div>
+
+  <script src="../assets/js/index.js"></script>
+  <script src="../assets/js/swipe.js"></script>
+
+</body>
+
+</html>

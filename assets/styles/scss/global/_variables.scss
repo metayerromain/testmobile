@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
+
+$light-blue : #49B6CE;
+$dark-blue : #183456;
+$admin-header : #395075;
+
+$breakpoints: (
+    xs: 576px,
+    sm: 768px,
+    md: 1024px,
+    lg: 1200px
+);
+
+
+
+// @mixin responsive-above($breakpoint) {
+//
+//     @if map-has-key($breakpoints, $breakpoint) {
+//
+//         $breakpoint-value: map-get($breakpoints, $breakpoint);
+//
+//         @media (min-width: $breakpoint-value) {
+//             @content;
+//         }
+//
+//     } @else {
+//
+//         @warn 'Invalid breakpoint: #{$breakpoint}.';
+//     }
+// }
+//
+//
+//
+// @mixin responsive-below($breakpoint) {
+//
+//     @if map-has-key($breakpoints, $breakpoint) {
+//
+//         $breakpoint-value: map-get($breakpoints, $breakpoint);
+//
+//         @media (max-width: ($breakpoint-value - 1)) {
+//             @content;
+//         }
+//
+//     } @else {
+//
+//         @warn 'Invalid breakpoint: #{$breakpoint}.';
+//     }
+// }
+
+//
+//
+// @mixin responsive-between($lower, $upper) {
+//
+//     @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+//
+//         $lower-breakpoint: map-get($breakpoints, $lower);
+//         $upper-breakpoint: map-get($breakpoints, $upper);
+//
+//         @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+//             @content;
+//         }
+//
+//     } @else {
+//
+//         @if (map-has-key($breakpoints, $lower) == false) {
+//
+//             @warn 'Your lower breakpoint was invalid: #{$lower}.';
+//         }
+//
+//         @if (map-has-key($breakpoints, $upper) == false) {
+//
+//             @warn 'Your upper breakpoint was invalid: #{$upper}.';
+//         }
+//     }
+// }
