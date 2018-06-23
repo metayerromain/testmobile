@@ -75,9 +75,9 @@ table {
     transition: all .3s; }
   .header__tabs {
     display: flex;
-    align-items: center;
-    margin-top: 20px; }
+    align-items: center; }
     .header__tabs-item {
+      padding-top: 20px;
       width: 33%;
       text-align: center; }
 

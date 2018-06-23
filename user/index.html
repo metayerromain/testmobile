@@ -29,17 +29,17 @@
           <div class="header__line-inner line1"></div>
         </div>
         <div class="header__tabs">
-          <div class="header__tabs-item">Suivi</div>
-          <div class="header__tabs-item">Devis</div>
-          <div class="header__tabs-item">Profil</div>
+          <div class="header__tabs-item 0" onclick="clickTabs(event)">Suivi</div>
+          <div class="header__tabs-item 1" onclick="clickTabs(event)">Devis</div>
+          <div class="header__tabs-item 2" onclick="clickTabs(event)">Profil</div>
         </div>
       </div>
     </div>
   </header>
   <div class="contentClient">
-    <section id="client1" ontouchstart="p1start(event)" ontouchmove="p1move(event)" ontouchend="p1end(event)" class="suivi active"></section>
-    <section id="client2" ontouchstart="p2start(event)" ontouchmove="p2move(event)" ontouchend="p2end(event)" class="devis"></section>
-    <section id="client3" ontouchstart="p3start(event)" ontouchmove="p3move(event)" ontouchend="p3end(event)" class="profil"></section>
+    <section id="client1" ontouchstart="p1start(event)" ontouchmove="p1move(event)" ontouchend="p1end(event)" class="page suivi active"></section>
+    <section id="client2" ontouchstart="p2start(event)" ontouchmove="p2move(event)" ontouchend="p2end(event)" class="page devis"></section>
+    <section id="client3" ontouchstart="p3start(event)" ontouchmove="p3move(event)" ontouchend="p3end(event)" class="page profil"></section>
   </div>
 
   <script src="../assets/js/index.js"></script>
