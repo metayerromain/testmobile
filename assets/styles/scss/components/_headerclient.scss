@@ -39,8 +39,8 @@
     background: $light-blue;
     display: block;
     position: absolute;
-    left: 0;
     z-index: 2;
+    transition: all .3s;
   }
   &__tabs{
     display: flex;
@@ -51,6 +51,15 @@
       text-align: center;
     }
   }
+}
+.line1{
+  left: 0;
+}
+.line2{
+  left: 33%;
+}
+.line3{
+  left: 66.6%;
 }
 .contentClient{
   position: relative;

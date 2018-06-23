@@ -2,6 +2,8 @@ var p1 = document.getElementById('client1');
 var p2 = document.getElementById('client2');
 var p3 = document.getElementById('client3');
 
+var line = document.querySelector(".header__line-inner");
+
 var startingX;
 
 function p1start(e){
@@ -32,6 +34,8 @@ function p1end(e){
     p2.style.left = '0';
     p2.style.display = 'block';
     p1.style.display = "none";
+    line.classList.remove("line1");
+    line.classList.add("line2");
   }
 }
 
@@ -65,10 +69,14 @@ function p2end(e){
     p2.style.display = "none";
     p2.style.left = '-100%';
     p3.style.left = "0";
+    line.classList.remove("line2");
+    line.classList.add("line3");
   } else {
     p1.style.left = "0";
     p2.style.left = '100%';
     p2.style.display = "none";
+    line.classList.remove("line2");
+    line.classList.add("line1");
   }
 }
 
@@ -101,5 +109,7 @@ function p3end(e){
     p2.style.left = "0";
     p3.style.left = '100%';
     p3.style.display = "none";
+    line.classList.remove("line3");
+    line.classList.add("line2");
   }
 }
