@@ -7,41 +7,161 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../assets/styles/css/styles.css">
   <link rel="stylesheet" href="../assets/styles/css/reset.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
   <title>ESPACE CLIENT</title>
 </head>
 
 <body>
 
-  <header class="header">
-    <div class="header__inner">
-      <div class="header__menu">
-        <div class="header__username">Username</div>
-        <div class="header__logout">Log out</div>
+  <header class="headeruser">
+    <div class="headeruser__inner">
+      <div class="headeruser__menu">
+        <div class="headeruser__username">Username</div>
+        <div class="headeruser__logout">Déconnexion</div>
       </div>
-      <div class="header__logo-imgContainer">
-        <h1><img class="header__img" src="../assets/img/Illustration-Logo.png" alt="logo" title="Space Dust"></h1>
+      <div class="headeruser__logo-imgContainer">
+        <h1><img class="headeruser__img" src="../assets/img/Illustration-Logo.png" alt="logo" title="Space Dust"></h1>
       </div>
-      <div class="header__companyName-imgContainer">
-        <img class="header__img" src="../assets/img/SPACE-DUST-W.png" alt="logo" title="Space Dust">
+      <div class="headeruser__companyName-imgContainer">
+        <img class="headeruser__img" src="../assets/img/SPACE-DUST-W.png" alt="logo" title="Space Dust">
       </div>
-      <div class="header__nav">
-        <div class="header__line">
-          <div class="header__line-inner line1"></div>
+      <div class="headeruser__nav">
+        <div class="headeruser__line">
+          <div class="headeruser__line-inner line1"></div>
         </div>
-        <div class="header__tabs">
-          <div class="header__tabs-item 0" onclick="clickTabs(event)">Suivi</div>
-          <div class="header__tabs-item 1" onclick="clickTabs(event)">Devis</div>
-          <div class="header__tabs-item 2" onclick="clickTabs(event)">Profil</div>
+        <div class="headeruser__tabs">
+          <div class="headeruser__tabs-item 0" onclick="clickTabs(event)">Suivi</div>
+          <div class="headeruser__tabs-item 1" onclick="clickTabs(event)">Devis</div>
+          <div class="headeruser__tabs-item 2" onclick="clickTabs(event)">Profil</div>
         </div>
       </div>
     </div>
   </header>
   <div class="contentClient">
-    <section id="client1" ontouchstart="p1start(event)" ontouchmove="p1move(event)" ontouchend="p1end(event)" class="page suivi active"></section>
-    <section id="client2" ontouchstart="p2start(event)" ontouchmove="p2move(event)" ontouchend="p2end(event)" class="page devis"></section>
-    <section id="client3" ontouchstart="p3start(event)" ontouchmove="p3move(event)" ontouchend="p3end(event)" class="page profil"></section>
+    <section id="client1" ontouchstart="p1start(event)" ontouchmove="p1move(event)" ontouchend="p1end(event)" class="page suivi active">
+      <div class="suivi__inner">
+
+        <h3 class="suivi__title userTitle">Temps éstimé</h3>
+
+        <div class="suivi__estimatedTime">
+          <span class="suivi__estimatedTime-hours">12</span>
+          <span class="suivi__estimatedTime-separed">:</span>
+          <span class="suivi__estimatedTime-minutes">23</span>
+          <span class="suivi__estimatedTime-separed">:</span>
+          <span class="suivi__estimatedTime-seconds">56</span>
+          <span class="suivi__estimatedTime-separed">:</span>
+          <span class="suivi__estimatedTime-millems">08</span>
+
+        </div>
+
+        <h3 class="suivi__title userTitle">Les déchets collectés</h3>
+
+        <div class="suivi__stats">
+          <canvas id="lineCharts"></canvas>
+        </div>
+
+        <div class="suivi__waste">
+          <div class="suivi__stats-circle">
+            <canvas id="circleCharts"></canvas>
+          </div>
+          <div class="suivi__legends">
+            <div class="suivi__legends-items">
+              <div class="suivi__legends-round outer-yellow">
+                <div class="suivi__legends-roundInner inner-yellow"></div>
+              </div>
+              <p class="suivi__legends-text">Déchets collectés</p>
+            </div>
+            <div class="suivi__legends-items">
+              <div class="suivi__legends-round outer-red">
+                <div class="suivi__legends-roundInner inner-red"></div>
+              </div>
+              <p class="suivi__legends-text">Déchets non-collectés</p>
+            </div>
+            <div class="suivi__legends-items">
+              <div class="suivi__legends-round outer-blue">
+                <div class="suivi__legends-roundInner inner-blue"></div>
+              </div>
+              <p class="suivi__legends-text">Déchets recyclés</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </section>
+    <section id="client2" ontouchstart="p2start(event)" ontouchmove="p2move(event)" ontouchend="p2end(event)" class="page devis">
+      <div class="devis__inner">
+        <h3 class="devis__title userTitle">Tous les devis</h3>
+        <div class="devis__cards">
+          <div class="devis__cards-inner">
+            <div class="devis__mission__principal">
+              <h4 class="devis__mission-title">Mission 1</h4>
+              <p class="devis__mission-date">fait le <span class="devis__mission-date-replaced">00/00/0000</span></p>
+            </div>
+            <div class="devis__mission__details">
+              <div class="devis__mission-waste">
+                <p class="devis__details-item">Déchets ramassés : <span class="devis__mission-pickedup">12 333</span></p>
+                <p class="devis__details-item">Déchets recyclés : <span class="devis__mission-recycled">15 987</span></p>
+              </div>
+              <p class="devis__mission-price">21M</p>
+            </div>
+          </div>
+        </div>
+        <div class="devis__cards">
+          <div class="devis__cards-inner">
+            <div class="devis__mission__principal">
+              <h4 class="devis__mission-title">Mission 2</h4>
+              <p class="devis__mission-date">fait le <span class="devis__mission-date-replaced">00/00/0000</span></p>
+            </div>
+            <div class="devis__mission__details">
+              <div class="devis__mission-waste">
+                <p class="devis__details-item">Déchets ramassés : <span class="devis__mission-pickedup">12 333</span></p>
+                <p class="devis__details-item">Déchets recyclés : <span class="devis__mission-recycled">15 987</span></p>
+              </div>
+              <p class="devis__mission-price">21M</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="client3" ontouchstart="p3start(event)" ontouchmove="p3move(event)" ontouchend="p3end(event)" class="page profil">
+      <div class="profil__inner">
+        <h1 class="profil__username">Loliopop</h1>
+        <h2 class="profil__company">Adveris</h2>
+        <form action="" method="POST">
+          <div class="profil__form-items">
+            <div class="profil__form-inner">
+              <div class="profil__form-text">
+                E-MAIL :
+              </div>
+              <input type="email" name="mail">
+            </div>
+          </div>
+          <div class="profil__form-items">
+            <div class="profil__form-inner">
+              <div class="profil__form-text">
+                MOT DE PASSE :
+              </div>
+              <input type="password" name="password">
+            </div>
+          </div>
+          <div class="profil__form-items">
+            <div class="profil__form-inner">
+              <div class="profil__form-text">
+                ADRESSE :
+              </div>
+              <input type="text" name="adress">
+            </div>
+          </div>
+          <input type="submit" name="submit" value="modifier">
+        </form>
+      </div>
+    </section>
   </div>
 
+  <script src="../assets/js/charts.js"></script>
   <script src="../assets/js/index.js"></script>
   <script src="../assets/js/swipe.js"></script>
 

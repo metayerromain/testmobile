@@ -36,36 +36,120 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.header {
+.header__inner {
+  padding: 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+.header__burger {
+  z-index: 2;
+  position: relative;
+  width: 18px;
+  height: 18px; }
+  .header__burger-round {
+    position: absolute;
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #183456; }
+
+.menu {
+  opacity: 0;
+  z-index: -1;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: #FFF;
+  top: 0;
+  left: 0;
+  transition: all .3s; }
+  .menu__containerItem {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .menu__item {
+    font-family: "nunito", sans-serif;
+    color: #183456;
+    margin-top: 30px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center; }
+  .menu__imgContainer {
+    width: 100px;
+    margin: 50px auto; }
+    .menu__imgContainer img {
+      width: 100%; }
+
+.round1 {
+  left: 0;
+  top: 0;
+  transition: all .3s; }
+
+.round2 {
+  right: 0;
+  top: 0;
+  transition: all .3s; }
+
+.round3 {
+  left: 0;
+  bottom: 0;
+  transition: all .3s; }
+
+.round4 {
+  right: 0;
+  bottom: 0;
+  transition: all .3s; }
+
+.menuActive {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all .3s; }
+
+.lgButton {
+  width: 120px;
+  text-align: center;
+  border-radius: 110px;
+  border: 1.5px solid #183456;
+  padding: 10px 0;
+  font-size: 12px;
+  font-family: 'Nunito', sans-serif;
+  color: #183456;
+  background-color: #FFF;
+  cursor: pointer; }
+
+.headeruser {
   background: #395075;
   width: 100vw;
   font-size: 12px;
   font-family: 'Nunito', sans-serif;
   color: #FFF; }
-  .header__inner {
+  .headeruser__inner {
     width: 90%;
     margin: auto;
     padding: 20px 0; }
-  .header__menu {
+  .headeruser__menu {
     display: flex;
     justify-content: space-between; }
-  .header__logo-imgContainer {
+  .headeruser__logo-imgContainer {
     width: 60px;
     margin: auto;
     transform: translateY(-50%); }
-  .header__companyName-imgContainer {
+  .headeruser__companyName-imgContainer {
     width: 82px;
     margin: auto;
     transform: translateY(-200%); }
-  .header__img {
+  .headeruser__img {
     width: 100%; }
-  .header__line {
+  .headeruser__line {
     width: 100%;
     height: 2px;
     background: rgba(73, 182, 206, 0.35);
     display: block;
     position: relative; }
-  .header__line-inner {
+  .headeruser__line-inner {
     width: 33%;
     height: 2px;
     background: #49B6CE;
@@ -73,10 +157,11 @@ table {
     position: absolute;
     z-index: 2;
     transition: all .3s; }
-  .header__tabs {
+  .headeruser__tabs {
     display: flex;
-    align-items: center; }
-    .header__tabs-item {
+    align-items: center;
+    text-transform: uppercase; }
+    .headeruser__tabs-item {
       padding-top: 20px;
       width: 33%;
       text-align: center; }
@@ -99,32 +184,178 @@ table {
   background: linear-gradient(to top right, #354158 0%, #3d5b89 100%); }
 
 .suivi {
+  overflow-x: hidden;
   position: absolute;
   left: 0;
   top: 0;
-  background: red;
-  opacity: .2;
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  font-family: "nunito",sans-serif; }
+  .suivi__inner {
+    width: 90%;
+    margin: auto; }
+  .suivi__estimatedTime {
+    width: 100%;
+    background-color: #45618C;
+    border-radius: 8px;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-around;
+    font-weight: bolder;
+    font-size: 32px;
+    color: #FFF; }
+  .suivi__waste {
+    margin-top: 50px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .suivi__stats {
+    position: relative;
+    width: 100%;
+    margin: auto; }
+    .suivi__stats-circle {
+      width: 250px;
+      height: 250px;
+      position: relative; }
+      .suivi__stats-circle #circleCharts {
+        width: auto !important;
+        height: 100% !important;
+        transform: translateX(-25%); }
+  .suivi__legends {
+    width: 20%;
+    text-align: center;
+    color: #FFF;
+    font-family: "nunito",sans-serif;
+    font-size: 8px;
+    font-weight: lighter; }
+    .suivi__legends-round {
+      display: block;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: 2px solid;
+      margin: 10px auto;
+      position: relative; }
+    .suivi__legends-roundInner {
+      display: block;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%); }
+  .suivi .outer-yellow {
+    border-color: #f1b555; }
+  .suivi .outer-red {
+    border-color: #f15555; }
+  .suivi .outer-blue {
+    border-color: #55b7f1; }
+  .suivi .inner-yellow {
+    background: linear-gradient(#fc7411 0%, #f1b555 100%); }
+  .suivi .inner-red {
+    background: linear-gradient(#ff3743 0%, #f15555 100%); }
+  .suivi .inner-blue {
+    background: linear-gradient(#55b7f1 0%, #1177fc 100%); }
+
+.userTitle {
+  font-family: "nunito",sans-serif;
+  font-weight: 400;
+  color: #FFF;
+  margin: 50px 0 30px 0; }
 
 .devis {
   display: none;
   position: absolute;
   left: 100%;
   top: 0;
-  background: yellow;
-  opacity: .2;
   height: 100vh;
   width: 100vw; }
+  .devis__inner {
+    width: 90%;
+    margin: auto; }
+  .devis__cards {
+    position: relative;
+    margin: 30px 0;
+    width: 100%;
+    background: #45618C;
+    border-radius: 8px; }
+    .devis__cards-inner {
+      padding: 10px;
+      color: #FFF;
+      font-family: "nunito",sans-serif;
+      font-size: 12px; }
+  .devis__mission__principal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 20px; }
+  .devis__mission-title {
+    font-weight: 400; }
+  .devis__mission-date {
+    font-weight: lighter; }
+  .devis__mission__details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+  .devis__mission-waste {
+    font-weight: lighter; }
+  .devis__details-item {
+    margin-top: 10px; }
+  .devis__mission-price {
+    font-size: 24px;
+    color: #49B6CE; }
 
 .profil {
   display: none;
   position: absolute;
   left: 200%;
   top: 0;
-  background: green;
-  opacity: .2;
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  font-family: "nunito",sans-serif;
+  color: #FFF; }
+  .profil__inner {
+    width: 90%;
+    margin: 30px auto 0;
+    text-align: center; }
+  .profil__username {
+    font-size: 24px;
+    font-weight: bolder; }
+  .profil__company {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 100; }
+  .profil__form-inner {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .profil__form-text {
+    width: 40%;
+    text-align: left; }
+  .profil__form-items {
+    position: relative;
+    width: 100%;
+    background: #45618C;
+    border-radius: 8px;
+    margin: 30px 0; }
+    .profil__form-items input {
+      display: block;
+      background-color: transparent;
+      border: none;
+      font-size: 14px;
+      padding: 5px 0;
+      color: #FFF;
+      font-weight: 100;
+      width: 60%; }
+  .profil input[type="submit"] {
+    background: #FFF;
+    width: 100px;
+    border-radius: 50px;
+    color: #49B6CE;
+    padding: 10px 0;
+    font-size: 12px; }
 
 /*# sourceMappingURL=styles.css.map */

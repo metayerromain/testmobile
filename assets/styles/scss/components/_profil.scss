@@ -3,9 +3,57 @@
   position: absolute;
   left: 200%;
   top: 0;
-  background: green;
-  opacity: .2;
   height: 100vh;
   width: 100vw;
-  // transition: all .3s;
+  font-family: "nunito",sans-serif;
+  color: #FFF;
+  &__inner{
+    width: 90%;
+    margin: 30px auto 0;
+    text-align: center;
+  }
+  &__username{
+    font-size: 24px;
+    font-weight: bolder;
+  }
+  &__company{
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 100;
+  }
+  &__form-inner{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__form-text{
+    width: 40%;
+    text-align: left;
+  }
+  &__form-items{
+    position: relative;
+    width: 100%;
+    background: #45618C;
+    border-radius: 8px;
+    margin: 30px 0;
+    input{
+      display: block;
+      background-color: transparent;
+      border: none;
+      font-size: 14px;
+      padding: 5px 0;
+      color: #FFF;
+      font-weight: 100;
+      width: 60%;
+    }
+  }
+  input[type="submit"]{
+    background: #FFF;
+    width: 100px;
+    border-radius: 50px;
+    color: $light-blue;
+    padding: 10px 0;
+    font-size: 12px;
+  }
 }

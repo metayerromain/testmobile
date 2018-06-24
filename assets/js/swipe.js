@@ -2,8 +2,8 @@ var p1 = document.getElementById('client1');
 var p2 = document.getElementById('client2');
 var p3 = document.getElementById('client3');
 
-var line = document.querySelector(".header__line-inner");
-var tabs = document.querySelectorAll(".header__tabs-item");
+var line = document.querySelector(".headeruser__line-inner");
+var tabs = document.querySelectorAll(".headeruser__tabs-item");
 var pages = document.querySelectorAll(".page");
 
 var startingX;
