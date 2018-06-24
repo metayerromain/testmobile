@@ -351,6 +351,7 @@ table {
       font-weight: 100;
       width: 60%; }
   .profil input[type="submit"] {
+    border: 1px solid #49B6CE;
     background: #FFF;
     width: 100px;
     border-radius: 50px;
